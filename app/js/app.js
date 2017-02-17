@@ -3,7 +3,10 @@
 require("./bootstrap");
 
 //
-require("angular-layout");
+$layout = require("angular-layout");
+
+//
+$layout.html = require("./partials/layouts/default.html");
 
 //
 angular.module("app", ["$layout"]);

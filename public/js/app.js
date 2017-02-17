@@ -76,7 +76,10 @@
 __webpack_require__(135);
 
 //
-__webpack_require__(2);
+$layout = __webpack_require__(2);
+
+//
+$layout.html = __webpack_require__(136);
 
 //
 angular.module("app", ["$layout"]);
@@ -33289,6 +33292,13 @@ window.angular = __webpack_require__(134);
 
 /***/ }),
 
+/***/ 136:
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"uk-navbar-container uk-margin\" uk-navbar>\n    <div class=\"uk-navbar-left\">\n\n        <a class=\"uk-navbar-item uk-logo\" href=\"#\">Logo</a>\n\n        <ul class=\"uk-navbar-nav\">\n            <li>\n                <a href=\"#\">\n                    <span class=\"uk-icon uk-margin-small-right\" href=\"#\" uk-icon=\"icon: star\"></span>\n                    Features\n                </a>\n            </li>\n        </ul>\n\n        <div class=\"uk-navbar-item\">\n            <div>Some <a href=\"#\">Link</a></div>\n        </div>\n\n        <div class=\"uk-navbar-item\">\n            <form action=\"javascript:void(0)\">\n                <input class=\"uk-input uk-form-width-small\" type=\"text\" placeholder=\"Input\">\n                <button class=\"uk-button uk-button-default\">Button</button>\n            </form>\n        </div>\n\n    </div>\n</nav>";
+
+/***/ }),
+
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33316,7 +33326,7 @@ angular
     .module("$layout", [])
     .component("layout", {
         bindings: { name : "@" },
-        template: $layout.html,
+        template: function() { return $layout.html },
         controller: function($scope) {
             this.$onInit = function() {
 
