@@ -63,23 +63,30 @@
 /******/ 	__webpack_require__.p = "./";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 0:
+__webpack_require__(4);
+module.exports = angular;
+
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 //
-__webpack_require__(135);
+__webpack_require__(5);
 
 //
-$layout = __webpack_require__(2);
+$layout = __webpack_require__(3);
 
 //
-$layout.html = __webpack_require__(136);
+$layout.html = __webpack_require__(6);
 
 //
 angular.module("app", ["$layout"]);
@@ -126,15 +133,52 @@ angular.module(ns.components, []);
     */
 
 /***/ }),
-
-/***/ 1:
+/* 2 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 133:
+
+//
+var angular = __webpack_require__(0);
+
+//
+var $layout = {
+
+    //
+    html: '<div>[template]</div>',
+
+    //
+    namespace: function(namespace) {
+        console.log(namespace);
+    }
+};
+
+//
+module.exports = $layout;
+
+//
+angular
+    .module("$layout", [])
+    .component("layout", {
+        bindings: { name : "@" },
+        template: function() { return $layout.html },
+        controller: function($scope) {
+            this.$onInit = function() {
+
+                console.log("ciao");
+
+            }
+        }
+    });
+
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 /**
@@ -33273,79 +33317,26 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-
-/***/ 134:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(133);
-module.exports = angular;
-
-
-/***/ }),
-
-/***/ 135:
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 //
-window.angular = __webpack_require__(134);
+window.angular = __webpack_require__(0);
 
 /***/ }),
-
-/***/ 136:
+/* 6 */
 /***/ (function(module, exports) {
 
 module.exports = "<nav class=\"uk-navbar-container uk-margin\" uk-navbar>\n    <div class=\"uk-navbar-left\">\n\n        <a class=\"uk-navbar-item uk-logo\" href=\"#\">Logo</a>\n\n        <ul class=\"uk-navbar-nav\">\n            <li>\n                <a href=\"#\">\n                    <span class=\"uk-icon uk-margin-small-right\" href=\"#\" uk-icon=\"icon: star\"></span>\n                    Features\n                </a>\n            </li>\n        </ul>\n\n        <div class=\"uk-navbar-item\">\n            <div>Some <a href=\"#\">Link</a></div>\n        </div>\n\n        <div class=\"uk-navbar-item\">\n            <form action=\"javascript:void(0)\">\n                <input class=\"uk-input uk-form-width-small\" type=\"text\" placeholder=\"Input\">\n                <button class=\"uk-button uk-button-default\">Button</button>\n            </form>\n        </div>\n\n    </div>\n</nav>";
 
 /***/ }),
-
-/***/ 2:
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
-//
-var angular = __webpack_require__(134);
-
-//
-var $layout = {
-
-    //
-    html: '<div>[template]</div>',
-
-    //
-    namespace: function(namespace) {
-        console.log(namespace);
-    }
-};
-
-//
-module.exports = $layout;
-
-//
-angular
-    .module("$layout", [])
-    .component("layout", {
-        bindings: { name : "@" },
-        template: function() { return $layout.html },
-        controller: function($scope) {
-            this.$onInit = function() {
-
-                console.log("ciao");
-
-            }
-        }
-    });
-
-
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(0);
-module.exports = __webpack_require__(1);
+__webpack_require__(1);
+module.exports = __webpack_require__(2);
 
 
 /***/ })
-
-/******/ });
+/******/ ]);
