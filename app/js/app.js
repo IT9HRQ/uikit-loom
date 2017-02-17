@@ -1,6 +1,7 @@
 
 //
-require("./bootstrap");
+require("angular");
+require("angular-ui-router");
 
 //
 $layout = require("angular-layout");
@@ -9,7 +10,21 @@ $layout = require("angular-layout");
 $layout.html = require("./partials/layouts/default.html");
 
 //
-angular.module("app", ["$layout"]);
+angular
+    .module("app", ["$layout", "ui.router"])
+    .config(function($stateProvider, $urlRouterProvider) {
+
+        //
+        $urlRouterProvider.otherwise("/");
+
+        //
+        $stateProvider
+            .state("home", {
+                url: "/",
+                template: require("./partials/simple.html"),
+                controller: "SimpleController"
+            })
+    });
 
 /*
 //
@@ -43,7 +58,7 @@ ns.use("app")
 //ns.use("");
 
 //
-require("angular-ui-router");
+
 //require("datatables.net");
 //require("datatables.net-bs");
 require("uikit");
