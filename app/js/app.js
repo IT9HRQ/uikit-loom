@@ -1,5 +1,15 @@
 
 //
+require("./bootstrap");
+
+//
+require("angular-layout");
+
+//
+angular.module("app", ["$layout"]);
+
+/*
+//
 var ns = require("angular-namespace")
        . namespace("games.wargame.killthename.app", "app")
        . use("factories", "")
@@ -22,7 +32,6 @@ console.log(ns.component);
 //
 window._ = require("lodash");
 window.$ = window.jQuery = require("jquery");
-window.angular = require("angular");
 
 
 ns.use("app")
@@ -37,3 +46,5 @@ require("angular-ui-router");
 require("uikit");
 
 angular.module(ns.components, []);
+
+    */
